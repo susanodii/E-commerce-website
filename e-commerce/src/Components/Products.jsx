@@ -1,13 +1,15 @@
- import React, {useEffect, useState}  from 'react'
+import React, {useEffect, useState}  from 'react'
+import {Route, Routes, useNavigate} from 'react-router-dom';
+
 import axios from 'axios'
 
-
-
-
- const Products = () => {
+const Products = () => {
   const [products, setProducts] = useState([]);
   const [fetchData, setFetchData] = useState([])
 
+ 
+  
+ 
   useEffect(() => {
 fetchProducts()
   }, [])
@@ -19,6 +21,7 @@ fetchProducts()
 
       setFetchData(res.data)
       setProducts(res.data.products)
+   console.log(res.data.products)
     })
     
   .catch((err) => {
@@ -28,20 +31,31 @@ fetchProducts()
   }
 
   
+  const navigate = useNavigate();
+ 
+  const navigateToPayment = () => {
+    // 👇️ navigate to /payment
+    navigate('/Payment');
+  };
   
     return (
-    <div>
+   
+   
+   <div>
       
      
      
     <div className='item-container' >
 {products && products.map((product) =>(
 <div className='card' key={product.id}>
-<img src={product.images} alt=''/>
+<div className='images-card'>
+  
+<img src={product.images[0]} alt=''/>
+</div>
 <h3> {product.title}</h3>
 <h3>{product.price} $</h3>
 <p className='products-details'>{product.description}</p>
-<div className='add-to-cart'> ADD TO CART</div>
+<button onClick={navigateToPayment} className='add-to-cart' > BUY NOW</button>
 
 </div>
 ))}

@@ -1,7 +1,12 @@
 import './App.css';
+
+import {Route, Routes} from "react-router-dom"
+
+import Payment from './PayStack/Payment';
 import Products from './Components/Products';
 
-import Card from './Components/Card';
+// import Card from './Components/Card';
+
 
 // require('dotenv').config()
 
@@ -9,8 +14,16 @@ import Card from './Components/Card';
 function App() {
   return (
     <>
-    <Card/>
-    <Products/>
+    {/* <Card/> */}
+    
+    <Routes>
+     <Route path="/" element={<Products />} />
+     <Route path="/payment" element={<Payment />} />
+    
+    </Routes>
+    
+    
+   
     
     
     
