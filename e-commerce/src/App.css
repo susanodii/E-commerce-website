@@ -584,3 +584,60 @@ justify-content: space-around;
     margin-top: 0px;
   }
 }
+
+
+
+
+
+
+/* PAYMENT FORM CSS */
+.form-payement-container{
+  font-family: 'Muli', sans-serif;
+  background-color: steelblue;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+form{
+  margin-left: 32rem;
+  margin-right: 32rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 5rem;
+}
+ 
+input[type=text],[type=tel], [type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+} 
+
+ .pay-btn {
+  width: 100%;
+  background: lightblue;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pay-btn:hover {
+  background-color: white;
+}
+
+/* div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+} */
